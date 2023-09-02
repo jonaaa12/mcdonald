@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's - Argentina</title>
+    <link rel="icon" href="./logos/McLogo-1.ico">
+    <link rel="stylesheet" href="style-Contacto.css">
+</head>
+<body>
+    <section class="main">
+<header>
+    <a href="./index.html"> <img src="./logos/McDonalds-logo-1.png" alt="logo-mcdonals" class="logo"></a>
+    <div class="toggle"></div>
+    <ul class="navigation">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./Productos.html">Productos</a></li>
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+</header>
+    <div class="container2">
+    <h1 class="titulo-contacto">Contacto</h1>
+    
+    <div class="form">
+    <form action="">
+        <p>Nombre:</p>
+            <input type="text"class="field"><br/>
+        <p>Apellido:</p>
+            <input type="text"class="field"><br/>
+        <p>Correo electrónico:</p>
+            <input type="text"class="field"><br/>
+        <p>Ciudad:</p>
+            <input type="text"class="field"><br/> 
+
+        <div class="columna" style="float: left; width: 100%; ">
+            <p>Asunto: </p>
+                <span></span>
+                <select>
+                    <option selected="selected" >Sugerencia</option>
+                    <option>Consulta</option>
+                    <option>Critica</option>
+                    <option>Reseña</option>
+                    <option>Elogio</option>
+                    <option>Otros</option>
+                </select>
+                <input type="text"class="field"><br/>
+        </div>
+        <br><br><br>
+        <p>Mensaje:</p>
+            <textarea class="field"></textarea><br/>
+        <p class="center-content">
+            <input type="button"class="btn btn-green"value="Enviar Datos">
+        </p>
+
+    </form>
+</div>
+</div>
+
+</section>
+
+<script>
+
+    //toogle
+    
+    const menutoggle = document.querySelector('.toggle');
+    const navigation= document.querySelector('.navigation');
+        menutoggle.onclick = function(){
+        menutoggle.classList.toggle('active');
+        navigation.classList.toggle('active');
+    
+    }
+    
+    
+    //Slider
+        const slides = document.querySelectorAll('.slides');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+    
+        i = 0 ;
+    
+        function ActiveSlide(n){
+            for (slide of slides)
+                slide.classList.remove('active');
+                slides[n].classList.add('active');
+        }
+    
+        //function for next btn
+    
+        next.addEventListener('click',function(){
+            if(i === slides.length - 1){
+                i = 0;
+                ActiveSlide(i);
+            } else{
+                i++;
+                ActiveSlide(i);
+    
+            }
+    
+    
+        })
+    
+        //function for next btn
+    
+        prev.addEventListener('click',function(){
+            if(i == 0){
+                i = slides.length - 1;
+                ActiveSlide(i);
+            } else{
+                i--;
+                ActiveSlide(i);
+            }
+        })
+    
+    
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>

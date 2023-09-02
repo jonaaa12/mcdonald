@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's - Argentina</title>
+    <link rel="icon" href="./logos/McLogo-1.ico">
+    <link rel="stylesheet" href="style-nosotros.css">
+ 
+</head>
+<body>
+    <section class="main">
+<header>
+    <a href="#"> <img src="./logos/McDonalds-logo-1.png" alt="logo-mcdonals" class="logo"></a>
+    <div class="toggle"></div>
+    <ul class="navigation">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./Productos.html">Productos</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+</header>
+
+    <div class="portada">
+        <p class="parrafo-nosotros">Nosotros</p>
+        <img src="./logos/Sumate_Portada_Desktop.jpg" alt="imagen-portada" class="img-portada">
+    </div>
+
+</section>
+
+<div class="contenedorGrande">
+<section class="layoutCards">
+    <div class="nosotros-1">
+    <img src="./logos/Header_Desktop_Arcos_Dorados.jpg" alt="arcos-dorados" id="img-cards-nosotros">
+    <div class="descripciones">
+        <h3>Arcos Dorados</h3>
+        <p>Arcos Dorados es el mayor operador de restaurantes de McDonald’s en América Latina y el Caribe.</p>
+        <button>Ver más</button>
+    </div>
+    </div>
+    <div class="nosotros-1">
+        <img src="./logos/Sumate_Portada_Desktop2.jpg" alt="" id="img-cards-nosotros">
+        <div class="descripciones">
+            <h3>Sumate a nuestro equipo</h3>
+            <p>Conocé nuestra Cooltura y postulate para trabajar con nosotros.</p>
+            <button>Ver más</button>
+        </div>
+    </div>
+    
+    <div class="nosotros-1">
+        <img src="./logos/Subseccion_Desktop_Noticias.jpg" alt="" id="img-cards-nosotros">
+        <div class="descripciones">
+            <h3>Noticias</h3>
+            <p>Entérate de las últimas noticias e iniciativas. Vas a quedar encantado!</p>
+            <button>Ver más</button>
+        </div>
+    </div>
+    <div class="nosotros-1">
+    <img src="./logos/Header_Desktop_Compromiso_Social_y_Desarrollo_Sustentable.jpg" alt="" id="img-cards-nosotros">
+    <div class="descripciones">
+        <h3>Compromiso social y Desarrollo sustentable</h3>
+        <p>Visita nuestra “Receta del futuro”, y conoce cómo trabajamos para generar un gran impacto.</p>
+        <button>Ver más</button>
+    </div>
+    </div>
+    
+  </section>
+</div>
+    
+
+<script>
+
+//toogle
+
+const menutoggle = document.querySelector('.toggle');
+const navigation= document.querySelector('.navigation');
+    menutoggle.onclick = function(){
+    menutoggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+
+}
+
+
+//Slider
+    const slides = document.querySelectorAll('.slides');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    i = 0 ;
+
+    function ActiveSlide(n){
+        for (slide of slides)
+            slide.classList.remove('active');
+            slides[n].classList.add('active');
+    }
+
+    //function for next btn
+
+    next.addEventListener('click',function(){
+        if(i === slides.length - 1){
+            i = 0;
+            ActiveSlide(i);
+        } else{
+            i++;
+            ActiveSlide(i);
+
+        }
+
+
+    });
+
+    //function for next btn
+
+    prev.addEventListener('click',function(){
+        if(i == 0){
+            i = slides.length - 1;
+            ActiveSlide(i);
+        } else{
+            i--;
+            ActiveSlide(i);
+        }
+    });
+
+</script>
+
+</body>
+</html>
